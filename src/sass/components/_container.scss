@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8px;
+
+  @include tablet {
+    width: 768px;
+    padding: 0 8px;
+  }
+  @include xs_desktop {
+    width: 1000px;
+    padding: 0 8px;
+  }
+
+  @include desktop {
+    width: 1200px;
+    padding: 0;
+  }
+  @include xl_desktop {
+    width: 1400px;
+  }
+}

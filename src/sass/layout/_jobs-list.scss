@@ -1,0 +1,109 @@
+// .board{}
+
+.job__item {
+  position: relative;
+  display: flex;
+  width: 396px;
+  height: auto;
+  margin-top: 8px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  background-color: $bg-secondary;
+
+  @include tablet {
+    width: 750px;
+  }
+  @include xs_desktop {
+    width: 960px;
+  }
+  @include desktop {
+    width: 1170px;
+  }
+  @include xl_desktop {
+    width: 1380px;
+  }
+}
+
+.picture {
+  width: 66px;
+  height: 66px;
+  margin-top: 45px;
+  margin-left: 16px;
+
+  object-fit: cover;
+  border-radius: 50px;
+
+  @include tablet {
+    width: 85px;
+    height: 85px;
+    margin-top: 24px;
+  }
+}
+
+.job__info {
+  position: relative;
+  padding: 44px 0 27px 19px;
+  width: 278px;
+
+  @include tablet {
+    width: 650px;
+  }
+  @include desktop {
+    padding: 24px 0 24px 26px;
+  }
+}
+
+.job__title {
+  @include font(18px, 1.33, 400, null);
+  width: 278px;
+  text-size-adjust: 80%;
+  margin-bottom: 5px;
+  @include tablet {
+    margin-bottom: 8px;
+    width: 600px;
+    @include font(20px, 1.25, 700, null);
+  }
+  @include desktop {
+    width: 960px;
+  }
+}
+.job__company {
+  margin-bottom: 7px;
+  @include font(16px, 1.56, 400, 0.24px);
+  color: $color-text-secondary;
+  @include tablet {
+    margin-bottom: 8px;
+  }
+}
+.job__address {
+  @include font(16px, 1.56, 400, 0.24px);
+  color: $color-text-secondary;
+}
+
+.address-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: purple;
+  fill: red;
+  color: $color-text-secondary;
+}
+.job__time {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  @include font(14px, 1.21, 300, 0.21px);
+  color: $color-text-secondary;
+
+  @include tablet {
+    top: auto;
+    bottom: 24px;
+  }
+}
+
+.fas {
+  margin-right: 8px;
+}

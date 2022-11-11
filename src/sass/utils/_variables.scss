@@ -1,0 +1,31 @@
+// Main Colors
+$color-accent: #2a3047;
+$color-accent-shadow: #384564;
+$color-accent-lighter: #55699e;
+
+//Benefits
+$color-benefits: #ffcf00;
+$color-benefits-transparent: #ffd0002c;
+$color-benefits-text: #988b49;
+
+// Texts
+$color-text: #3a4562;
+$color-text-secondary: #878d9d;
+$color-text-light: #545454;
+$color-text-transparent: rgba(56, 65, 93, 0.355988);
+$color-text-lighter: #ffffff;
+
+// Backgrounds
+$bg-body: #ffffff;
+$bg-secondary: #eff0f5;
+$bg-detailed: #e6e9f2;
+$bg-accent: #f5f5f5;
+
+// Typography
+$font-stack: 'Roboto', sans-serif;
+$font-size: 16px; // Body Font Size
+$line-height: 1.56; // Document Line Height
+
+// Transitions
+$transition-duration: 250ms;
+$transition-animation: cubic-bezier(0.4, 0, 0.2, 1);
