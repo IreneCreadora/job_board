@@ -1,3 +1,5 @@
+import { formatDistance, subDays } from 'date-fns';
+
 export function createMarkup({
   id,
   name,
@@ -14,7 +16,9 @@ export function createMarkup({
   description,
   employment_type,
 }) {
-  // const time = date.toISOString(createdAt);
+  const postedTime = formatDistance(new Date(createdAt), Date.now(), {
+    addSuffix: true,
+  });
 
   return `<li class="job__item" data-id="${id}">
       <img src="${pictures[0]}" alt="${name}" class="picture" loading="lazy">
@@ -23,10 +27,10 @@ export function createMarkup({
       </h2>
       <p class="job__company">${name}
       </p>
-      <p class="job__address"><i style='font-size:18px' class='fas'>&#xf3c5;</i>${address}
+      <p class="job__address"><i class="fa-solid fa-location-dot"></i>${address}
       </p>
       </div>
-      <p class="job__time">${createdAt}
+      <p class="job__time">Posted ${postedTime}
       </p>
   </li>`;
 }
