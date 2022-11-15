@@ -60,6 +60,7 @@
   width: 278px;
   text-size-adjust: 80%;
   margin-bottom: 5px;
+  color: $color-text;
   @include tablet {
     margin-bottom: 8px;
     width: 600px;
@@ -82,15 +83,6 @@
   color: $color-text-secondary;
 }
 
-.address-icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: purple;
-  fill: red;
-  color: $color-text-secondary;
-}
 .job__time {
   position: absolute;
   top: 13px;

@@ -13,18 +13,4 @@ export class JobsAPI {
     console.log(data);
     return data;
   }
-  //   incrementPage() {
-  //     this.#page += 1;
-  //   }
-
-  //   resetPage() {
-  //     this.#page = 1;
-  //   }
-  //   calculateTotalPages(total) {
-  //     this.#totalPages = Math.ceil(total / this.#perPage);
-  //   }
-
-  //   get isShowLoadMore() {
-  //     return this.#page < this.#totalPages;
-  //   }
 }

@@ -1,0 +1,193 @@
+.vacancy__section {
+  @include tablet {
+    position: relative;
+  }
+}
+
+.vacancy__top-title {
+  @include font(28px, 1.21, 700, 0.41px);
+  color: $color-text;
+  padding-top: 24px;
+  @include xs_desktop {
+    padding-top: 56px;
+  }
+}
+.vacancy__btn {
+  padding: 4px 12px;
+  background-color: inherit;
+  border: none;
+  color: $color-text-transparent;
+  @include font(18px, 1.33, 400, 0.56px);
+}
+.vacancy__btn > i {
+  margin-right: 5px;
+}
+
+.vacancy__links {
+  @include tablet {
+    position: absolute;
+    top: 30px;
+    left: 520px;
+  }
+  @include xs_desktop {
+    top: 56px;
+    left: 690px;
+  }
+}
+
+.main-info__wrapper {
+  position: relative;
+  margin-top: 32px;
+  padding-bottom: 50px;
+}
+.vacancy__title {
+  @include font(24px, 1.25, 700, 0.75px);
+  @include tablet {
+    width: 500px;
+  }
+}
+
+.vacancy__time {
+  position: absolute;
+  bottom: 16px;
+  left: 1px;
+  @include font(13px, 1.92, 300, 0.19px);
+  color: $color-text-secondary;
+
+  @include tablet {
+    @include font(18px, 1.33, 400, 0.56px);
+  }
+}
+.salary__wrapper {
+  position: absolute;
+  bottom: 0px;
+  right: 15px;
+
+  @include tablet {
+    top: 1px;
+    right: 50px;
+    bottom: auto;
+  }
+  @include xs_desktop {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.salary__wrapper > span {
+  @include font(18x, 1.33, 400, 0.56px);
+  color: $color-text-transparent;
+}
+.vacancy__salary {
+  @include font(20px, 1.25, 700, 0.63px);
+}
+
+.vacancy__description {
+  white-space: pre-line;
+  @include font(18x, 1.33, 400, 0.56px);
+  @include tablet {
+    width: 721px;
+  }
+}
+
+.vacancy__btn-apply {
+  display: block;
+  margin: 0 auto;
+  @include font(12px, 1.33, 600, null);
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-text-lighter;
+  border: none;
+  border-radius: 8px;
+  background-color: $color-accent-shadow;
+  padding: 18px 30px;
+  @include xs_desktop {
+    margin-left: 1px;
+  }
+}
+
+.vacancy__image-title {
+  margin-top: 135px;
+  margin-bottom: 10px;
+  @include font(28px, 1.21, 700, 0.41px);
+  @include tablet {
+    margin-top: 86px;
+  }
+}
+
+.vacancy__image {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.vacancy__image > img {
+  width: 200px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.vacancy__info > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.vacancy__info-title {
+  margin-top: 63px;
+  margin-bottom: 10px;
+  @include font(28px, 1.21, 700, 0.41px);
+}
+.vacancy__info-text {
+  @include font(18x, 1.33, 400, 0.56px);
+  color: $color-text-transparent;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.employment {
+  padding: 17px 30px;
+  @include font(16x, 1, 700, 0.46px);
+  background-color: $color-accent-transparent;
+  color: $color-accent;
+  border-radius: 8px;
+  border: 1px solid rgba(85, 105, 158, 0.3);
+}
+
+.benefits {
+  padding: 17px 30px;
+  @include font(16x, 1, 700, 0.46px);
+  background-color: $color-benefits-transparent;
+  color: $color-benefits-text;
+  border-radius: 8px;
+  border: 1px solid $color-benefits;
+}
+
+.vacancy__contacts-title {
+  @include font(28px, 1.21, 700, 0.41px);
+}
+
+.btn-return {
+  display: none;
+  @include tablet {
+    display: inline-block;
+    padding: 18px 26px;
+    background-color: $color-accent-transparent;
+    color: $color-text;
+    @include font(12px, 1.33, 600, null);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 1px solid rgba(85, 105, 158, 0.3);
+  }
+}
+
+// ________________________________________________________
+.desktop-btn-apply {
+  display: none;
+  @include xs_desktop {
+    display: block;
+    margin-top: 39px;
+  }
+}
