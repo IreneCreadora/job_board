@@ -1,5 +1,5 @@
-// const LatLngAdr = require('latlng-address');
-import LatLngAdr from 'latlng-address';
+const LatLngAdr = require('latlng-address');
+// import LatLngAdr from 'latlng-address';
 
 const config = {
   key: 'AIzaSyAqyTYGtrkE3itqQLtElL - qN7GwlqOJTOQ',
