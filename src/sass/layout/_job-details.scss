@@ -27,11 +27,15 @@
   @include tablet {
     position: absolute;
     top: 30px;
-    left: 520px;
+    left: 450px;
   }
   @include xs_desktop {
     top: 56px;
-    left: 690px;
+    left: 360px;
+  }
+  @include desktop {
+    top: 56px;
+    left: 540px;
   }
 }
 
@@ -58,6 +62,7 @@
     @include font(18px, 1.33, 400, 0.56px);
   }
 }
+
 .salary__wrapper {
   position: absolute;
   bottom: 0px;
@@ -65,12 +70,17 @@
 
   @include tablet {
     top: 1px;
-    right: 50px;
+    left: 560px;
+    right: auto;
     bottom: auto;
   }
   @include xs_desktop {
     display: flex;
     flex-direction: column-reverse;
+    left: 470px;
+  }
+  @include desktop {
+    left: 600px;
   }
 }
 .salary__wrapper > span {
@@ -85,6 +95,12 @@
   white-space: pre-line;
   @include font(18x, 1.33, 400, 0.56px);
   @include tablet {
+    width: 721px;
+  }
+  @include xs_desktop {
+    width: 600px;
+  }
+  @include desktop {
     width: 721px;
   }
 }
@@ -102,6 +118,13 @@
   padding: 18px 30px;
   @include xs_desktop {
     margin-left: 1px;
+  }
+}
+
+.vacancy__advantages {
+  @include xs_desktop {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
@@ -165,12 +188,61 @@
 }
 
 .vacancy__contacts-title {
+  margin-top: 63px;
   @include font(28px, 1.21, 700, 0.41px);
+  @include xs_desktop {
+    display: none;
+  }
 }
+
+.vacancy__contacts-wrapper {
+  margin-top: 21px;
+  width: 372px;
+  height: 436px;
+  padding: 31px 62px;
+  background-color: $color-accent;
+  border-radius: 8px;
+  @include xs_desktop {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+}
+.vacancy__company {
+  margin-bottom: 17px;
+  @include font(16px, 1.22, 700, 0.24px);
+  color: $color-text-lighter-accent;
+
+  @include xs_desktop {
+    @include font(20px, 1.22, 700, 0.63px);
+  }
+}
+
+.vacancy__address {
+  margin-bottom: 6px;
+  @include font(16px, 1.43, 400, 0.5px);
+  color: $color-text-lighter-accent;
+
+  @include xs_desktop {
+    @include font(18px, 1.33, 400, 0.56px);
+  }
+}
+
+.vacancy__phone,
+.vacancy__email {
+  @include font(16px, 1.43, 400, 0.5px);
+  color: $color-text-lighter;
+
+  @include xs_desktop {
+    @include font(18px, 1.33, 400, 0.56px);
+  }
+}
+// ________________________________________________________
 
 .btn-return {
   display: none;
   @include tablet {
+    margin: 100px auto 50px 20px;
     display: inline-block;
     padding: 18px 26px;
     background-color: $color-accent-transparent;
@@ -182,8 +254,6 @@
     border: 1px solid rgba(85, 105, 158, 0.3);
   }
 }
-
-// ________________________________________________________
 .desktop-btn-apply {
   display: none;
   @include xs_desktop {

@@ -5,10 +5,10 @@ function openPage() {
   renderJobDetails(localStorage.getItem('currentID'));
 }
 
-function renderJobDetails(currentId) {
+async function renderJobDetails(currentId) {
   try {
     const currentJobData = localStorage.getItem(currentId);
-    const markup = createMarkupCurrentJob(JSON.parse(currentJobData));
+    const markup = await createMarkupCurrentJob(JSON.parse(currentJobData));
     refs.jobDetailsContainer.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.log(error);

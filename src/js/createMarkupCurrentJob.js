@@ -1,6 +1,7 @@
 import { formatDistance, subDays } from 'date-fns';
+import { locationRequest } from './getLocationAddress';
 
-export function createMarkupCurrentJob({
+export async function createMarkupCurrentJob({
   id,
   name,
   email,
@@ -19,6 +20,12 @@ export function createMarkupCurrentJob({
   const postedTime = formatDistance(new Date(createdAt), Date.now(), {
     addSuffix: true,
   });
+  // const locationAddress = await locationRequest.getAddress(
+  //   JSON.parse(location.lat),
+  //   JSON.parse(location.long)
+  // );
+  // const jobAddress = locationAddress[0].formatted_address;
+
   return `<div class="vacancy__item" data-id="${id}">
   <div class="vacancy__links">
   <button class="vacancy__btn"><i class="fa-regular fa-bookmark"></i> Save to my list</button>
@@ -38,6 +45,8 @@ export function createMarkupCurrentJob({
   <p class="vacancy__description">${description}
   </p>
   <button class="vacancy__btn-apply">Apply now</button>
+  <div class="vacancy__advantages">
+  <div>
       <h3 class="vacancy__image-title">Attached images
       </h3>
       <hr />  
@@ -45,6 +54,7 @@ export function createMarkupCurrentJob({
       <img src="${pictures[0]}" alt="Company image" loading="lazy">
       <img src="${pictures[1]}" alt="Company image" loading="lazy">
       <img src="${pictures[2]}" alt="Company image" loading="lazy">
+      </div>
       </div>
       <div class="vacancy__info">
       <h3 class="vacancy__info-title">Additional info
@@ -61,10 +71,11 @@ export function createMarkupCurrentJob({
       <li class="benefits">${benefits[1]}</li>
       </ul>
       </div>
+      </div>
       <div class="vacancy__contacts">
       <h3 class="vacancy__contacts-title">Contacts
-      </h3>
       <hr />
+      </h3>      
       <div class="vacancy__contacts-wrapper">
       <p class="vacancy__company">${name}
       </p>
@@ -76,13 +87,5 @@ export function createMarkupCurrentJob({
       </p>
       </div> 
       </div>
-      <a
-  href="./index.html"
-  target="_self"
-  rel="noopener noreferrer"
-  title="Return to jobs board"
-  class="btn-return"
-> <i class="fa-solid fa-chevron-left"></i> Return to job board
-</a>
   </div>`;
 }
