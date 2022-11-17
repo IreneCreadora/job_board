@@ -1,5 +1,5 @@
-import { formatDistance, subDays } from 'date-fns';
-// import { locationRequest } from './getLocationAddress';
+import { formatDistance } from 'date-fns';
+// import { getLocationAddress } from './getLocationAddress';
 
 export async function createMarkupCurrentJob({
   id,
@@ -20,11 +20,11 @@ export async function createMarkupCurrentJob({
   const postedTime = formatDistance(new Date(createdAt), Date.now(), {
     addSuffix: true,
   });
-  // const locationAddress = await locationRequest.getAddress(
-  //   JSON.parse(location.lat),
-  //   JSON.parse(location.long)
-  // );
-  // const jobAddress = locationAddress[0].formatted_address;
+  // В теорії тут у функцію я передаю дані з бекенду, але цифри які приходять, нажаль не валідні,
+  // я провела тест і всі дані які приходили в різний час, в гугл пошуку видавали координати океанів,
+  // тому країни і міста там у відповіді немає.
+  // Для того щоб показати мій варіан обробки даних, я використала валідні координати.
+  // const jobAddress = await getLocationAddress( location.lat , location.long );
 
   return `<div class="vacancy__item" data-id="${id}">
   <div class="vacancy__links">
