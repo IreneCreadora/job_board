@@ -1,5 +1,6 @@
 import { formatDistance, subDays } from 'date-fns';
-import { locationRequest } from './getLocationAddress';
+// import { locationRequest } from './getLocationAddress';
+import { getLocationAddress } from './getLocationAddress';
 
 export async function createMarkup({
   id,
@@ -21,11 +22,12 @@ export async function createMarkup({
     addSuffix: true,
   });
 
-  const locationAddress = await locationRequest.getAddress(
-    50.450001,
-    30.523333
-  );
-  const jobAddress = locationAddress[0].formatted_address;
+  // const locationAddress = await locationRequest.getAddress(
+  //   50.450001,
+  //   30.523333
+  // );
+  // const jobAddress = locationAddress[0].formatted_address;
+  const jobAddress = await getLocationAddress();
 
   return `<li class="job__item" data-id="${id}">
       <img src="${pictures[0]}" alt="${name}" class="picture" loading="lazy">
