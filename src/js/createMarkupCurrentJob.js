@@ -1,5 +1,8 @@
 import { formatDistance } from 'date-fns';
-// import { getLocationAddress } from './getLocationAddress';
+import { renderEmploymentTypes } from './renderEmploymentTypes';
+import { renderBenefits } from './renderBenefits';
+import { renderPicturesMarkup } from './renderPicturesMarkup';
+import { getLocationAddress } from './getLocationAddress';
 
 export async function createMarkupCurrentJob({
   id,
@@ -20,11 +23,17 @@ export async function createMarkupCurrentJob({
   const postedTime = formatDistance(new Date(createdAt), Date.now(), {
     addSuffix: true,
   });
+  const convertedSalary = salary.replaceAll('k', ' 000');
+  const employmentTypesMarkup = renderEmploymentTypes(employment_type).join('');
+  const benefitsMarkup = renderBenefits(benefits).join('');
+  const picturesMarkup = renderPicturesMarkup(pictures).join('');
+
+  // const jobAddress = await getLocationAddress( location.lat , location.long );
   // В теорії тут у функцію я передаю дані з бекенду, але цифри які приходять, нажаль не валідні,
   // я провела тест і всі дані які приходили в різний час, в гугл пошуку видавали координати океанів,
   // тому країни і міста там у відповіді немає.
-  // Для того щоб показати мій варіан обробки даних, я використала валідні координати.
-  // const jobAddress = await getLocationAddress( location.lat , location.long );
+  // Для того щоб показати мій варіант обробки даних, я використала валідні координати.
+  const jobAddress = await getLocationAddress();
 
   return `<div class="vacancy__item" data-id="${id}">
   <div class="vacancy__links">
@@ -38,7 +47,7 @@ export async function createMarkupCurrentJob({
   <div class="salary__wrapper">
   <span>Brutto, per year
   </span>
-  <p class="vacancy__salary">${salary} €
+  <p class="vacancy__salary"> € ${convertedSalary}
   </p>
   </div>
   </div>
@@ -50,10 +59,7 @@ export async function createMarkupCurrentJob({
       <h3 class="vacancy__image-title">Attached images
       </h3>
       <hr />  
-      <div class="vacancy__image">    
-      <img src="${pictures[0]}" alt="Company image" loading="lazy">
-      <img src="${pictures[1]}" alt="Company image" loading="lazy">
-      <img src="${pictures[2]}" alt="Company image" loading="lazy">
+      <div class="vacancy__image">${picturesMarkup}
       </div>
       </div>
       <div class="vacancy__info">
@@ -61,14 +67,10 @@ export async function createMarkupCurrentJob({
       </h3>
       <hr />      
       <p class="vacancy__info-text">Employment type</p>
-      <ul>
-      <li class="employment">${employment_type[0]}</li>
-      <li class="employment">${employment_type[1]}</li>
+      <ul>${employmentTypesMarkup}
       </ul>
       <p class="vacancy__info-text">Benefits</p>
-      <ul>
-      <li class="benefits">${benefits[0]}</li>
-      <li class="benefits">${benefits[1]}</li>
+      <ul>${benefitsMarkup}  
       </ul>
       </div>
       </div>
@@ -79,7 +81,7 @@ export async function createMarkupCurrentJob({
       <div class="vacancy__contacts-wrapper">
       <p class="vacancy__company">${name}
       </p>
-      <p class="vacancy__address"><i class="fa-solid fa-location-dot"></i>${address}
+      <p class="vacancy__address"><i class="fa-solid fa-location-dot"></i>${jobAddress}, ${address}
       </p>
       <p class="vacancy__phone">${phone}
       </p>

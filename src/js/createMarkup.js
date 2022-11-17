@@ -4,18 +4,11 @@ import { getLocationAddress } from './getLocationAddress';
 export async function createMarkup({
   id,
   name,
-  email,
-  phone,
   title,
-  salary,
   address,
-  benefits,
   location,
   pictures,
   createdAt,
-  updatedAt,
-  description,
-  employment_type,
 }) {
   const postedTime = formatDistance(new Date(createdAt), Date.now(), {
     addSuffix: true,
