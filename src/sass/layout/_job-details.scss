@@ -44,9 +44,16 @@
   margin-top: 32px;
   padding-bottom: 50px;
 }
+
 .vacancy__title {
   @include font(24px, 1.25, 700, 0.75px);
   @include tablet {
+    width: 500px;
+  }
+  @include xs_desktop {
+    width: 450px;
+  }
+  @include desktop {
     width: 500px;
   }
 }
@@ -77,7 +84,7 @@
   @include xs_desktop {
     display: flex;
     flex-direction: column-reverse;
-    left: 470px;
+    left: 450px;
   }
   @include desktop {
     left: 600px;

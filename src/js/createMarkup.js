@@ -24,14 +24,12 @@ export async function createMarkup({
       <img src="${pictures[0]}" alt="${name}" class="picture" loading="lazy">
       <div class="job__info">
       <a
-  href="./job-details.html"
-  target="_self"
-  rel="noopener noreferrer"
-  title="Job details"
-  class="job__title"
->
-${title}
-</a>
+        href="./job-details.html"
+        target="_self"
+        rel="noopener noreferrer"
+        title="Job details"
+        class="job__title">${title}
+      </a>
       <p class="job__company">${name}
       </p>
       <p class="job__address"><i class="fa-solid fa-location-dot"></i>${jobAddress}

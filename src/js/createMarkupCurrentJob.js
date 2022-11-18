@@ -24,9 +24,9 @@ export async function createMarkupCurrentJob({
     addSuffix: true,
   });
   const convertedSalary = salary.replaceAll('k', ' 000');
+  const picturesMarkup = renderPicturesMarkup(pictures).join('');
   const employmentTypesMarkup = renderEmploymentTypes(employment_type).join('');
   const benefitsMarkup = renderBenefits(benefits).join('');
-  const picturesMarkup = renderPicturesMarkup(pictures).join('');
 
   // const jobAddress = await getLocationAddress( location.lat , location.long );
   // В теорії тут у функцію я передаю дані з бекенду, але цифри які приходять, нажаль не валідні,
@@ -37,9 +37,9 @@ export async function createMarkupCurrentJob({
 
   return `<div class="vacancy__item" data-id="${id}">
   <div class="vacancy__links">
-  <button class="vacancy__btn"><i class="fa-regular fa-bookmark"></i> Save to my list</button>
-  <button class="vacancy__btn"><i class="fa-solid fa-share-nodes"></i> Share</button></div>
-  <button class="vacancy__btn-apply desktop-btn-apply">Apply now</button>
+  <button class="vacancy__btn" aria-label="Save"><i class="fa-regular fa-bookmark"></i> Save to my list</button>
+  <button class="vacancy__btn" aria-label="Share"><i class="fa-solid fa-share-nodes"></i> Share</button></div>
+  <button class="vacancy__btn-apply desktop-btn-apply" aria-label="Apply now">Apply now</button>
   <div class="main-info__wrapper">
   <h2 class="vacancy__title">${title}</h2>
   <p class="vacancy__time">Posted ${postedTime}
@@ -53,7 +53,7 @@ export async function createMarkupCurrentJob({
   </div>
   <p class="vacancy__description">${description}
   </p>
-  <button class="vacancy__btn-apply">Apply now</button>
+  <button class="vacancy__btn-apply" aria-label="Apply now">Apply now</button>
   <div class="vacancy__advantages">
   <div>
       <h3 class="vacancy__image-title">Attached images

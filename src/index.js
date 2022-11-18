@@ -8,8 +8,11 @@ export const jobsList = new JobsAPI();
 const renderJobsList = async function () {
   try {
     const items = await jobsList.getJobsList();
+
     saveDataAtLocalStorage(items);
+
     const markup = await Promise.all(items.map(createMarkup));
+    
     refs.board.insertAdjacentHTML('beforeend', markup.join(''));
   } catch (error) {
     console.log(error);

@@ -8,7 +8,9 @@ function openPage() {
 async function renderJobDetails(currentId) {
   try {
     const currentJobData = localStorage.getItem(currentId);
+
     const markup = await createMarkupCurrentJob(JSON.parse(currentJobData));
+
     refs.jobDetailsContainer.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.log(error);
